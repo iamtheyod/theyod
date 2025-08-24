@@ -1,25 +1,32 @@
-// === Playlist Data (can later move to playlist.json) ===
-const playlist = [
-  { title: "Track 1", file: "music/track1.mp3" },
-  { title: "Track 2", file: "music/track2.mp3" },
-  { title: "Track 3", file: "music/track3.mp3" }
-];
-
 // === Elements ===
 let currentIndex = 0;
 const audio = document.getElementById("audio");
 const playlistEl = document.getElementById("playlist");
+let playlist = [];
+
+// === Fetch Playlist from JSON ===
+fetch("data/playlist.json")
+  .then(response => response.json())
+  .then(data => {
+    playlist = data;
+    buildPlaylist();
+    loadTrack(currentIndex);
+  })
+  .catch(error => console.error("Error loading playlist:", error));
 
 // === Build Playlist UI ===
-playlist.forEach((track, index) => {
-  const li = document.createElement("li");
-  li.innerHTML = `
-    <span>${track.title}</span>
-    <a href="${track.file}" download>⬇️ Download</a>
-  `;
-  li.addEventListener("click", () => loadTrack(index));
-  playlistEl.appendChild(li);
-});
+function buildPlaylist() {
+  playlistEl.innerHTML = ""; // Clear existing
+  playlist.forEach((track, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${track.title}</span>
+      <a href="${track.file}" download>⬇️ Download</a>
+    `;
+    li.addEventListener("click", () => loadTrack(index));
+    playlistEl.appendChild(li);
+  });
+}
 
 // === Load Track Function ===
 function loadTrack(index) {
@@ -56,7 +63,3 @@ audio.addEventListener("ended", () => {
   currentIndex = (currentIndex + 1) % playlist.length;
   loadTrack(currentIndex);
 });
-
-// === Initialize ===
-loadTrack(currentIndex);
-
