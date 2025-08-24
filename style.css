@@ -1,1 +1,142 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Header */
+header {
+  background: #111;
+  color: #fff;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+/* Sections */
+section {
+  background: #fff;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #111;
+}
+
+/* Music Player */
+#audio {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+#controls button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background: #0070e0;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#controls button:hover {
+  background: #005bb5;
+}
+
+/* Playlist */
+#playlist {
+  list-style: none;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+#playlist li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#playlist li a {
+  color: #0070e0;
+  text-decoration: none;
+}
+
+#playlist li a:hover {
+  text-decoration: underline;
+}
+
+/* Donate Section */
+#donate {
+  text-align: center;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 1rem 0;
+  background: #0070e0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.donate-btn:hover {
+  background: #005bb5;
+}
+
+/* Bitcoin QR */
+#btc-donate img {
+  margin-top: 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+/* Store */
+#store iframe {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  section {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+}
 
