@@ -1,3 +1,10 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Body */
 body {
   font-family: Arial, sans-serif;
@@ -11,105 +18,115 @@ body {
 header {
   background: #111;
   color: #fff;
-  padding: 2rem 0;
-}
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-header p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #bbb;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
 }
 
-/* Sections (default opaque) */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #ccc;
+}
+
+/* Sections */
 section {
-  max-width: 800px;
+  background: #fff;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #fff; /* solid white */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-h2 {
-  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* Semi-transparent sections */
-#music, #donate {
-  background: rgba(255, 255, 255, 0.5); /* 50% transparent */
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #111;
 }
 
 /* Music Player */
-#audio-player {
+#audio {
   width: 100%;
   margin: 1rem 0;
 }
-#controls {
-  margin: 1rem 0;
-}
+
 #controls button {
-  margin: 0 0.25rem;
-  padding: 0.5rem 1rem;
+  padding: 10px 15px;
+  margin: 5px;
   border: none;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
   border-radius: 5px;
-  transition: background 0.3s;
+  background: #0070e0;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
 }
+
 #controls button:hover {
-  background: #0056b3;
+  background: #005bb5;
 }
+
+/* Playlist */
 #playlist {
   list-style: none;
-  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
 }
+
 #playlist li {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem;
-  cursor: pointer;
-  background: rgba(0, 123, 255, 0.05);
-  margin-bottom: 5px;
-  border-radius: 5px;
-  transition: background 0.3s;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
 }
-#playlist li:hover {
-  background: rgba(0, 123, 255, 0.1);
-}
-#playlist a {
+
+#playlist li a {
+  color: #0070e0;
   text-decoration: none;
-  color: #007bff;
+}
+
+#playlist li a:hover {
+  text-decoration: underline;
 }
 
 /* Donate Section */
-#donate button {
-  background: #007bff;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-#donate button:hover {
-  background: #0056b3;
-}
-#donate img {
-  margin-top: 1rem;
-  max-width: 150px;
+#donate {
+  text-align: center;
 }
 
-/* Store (keep opaque) */
+.donate-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 1rem 0;
+  background: #0070e0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.donate-btn:hover {
+  background: #005bb5;
+}
+
+/* Bitcoin QR */
+#btc-donate img {
+  margin-top: 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+}
+
+/* Store */
 #store iframe {
   margin-top: 1rem;
   border-radius: 8px;
   overflow: hidden;
-  width: 100%;
-  min-height: 600px;
-  border: none;
 }
 
 /* Responsive */
@@ -117,6 +134,7 @@ h2 {
   section {
     padding: 1rem;
   }
+
   header h1 {
     font-size: 2rem;
   }
